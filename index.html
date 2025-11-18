@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentru Diana</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Playfair Display', serif;
+    background: #000;
+    color: white;
+}
+
+/* VIDEO BACKGROUND */
+#bg-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+    z-index: -1;
+}
+
+/* OVERLAY DARK */
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    z-index: -1;
+}
+
+/* TITLE INTRO */
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 35px rgba(255,255,255,0.7);
+    animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 15px #6b4bff; }
+    100% { text-shadow: 0 0 40px #b79bff; }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 40px;
+    padding: 15px 45px;
+    border: 1px solid #b79bff;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: #b79bff;
+    color: #000;
+    box-shadow: 0 0 25px #b79bff;
+}
+
+/* BOOK SECTION */
+#book {
+    width: 100%;
+    padding: 90px 20px;
+    text-align: center;
+    display: none;
+    animation: fadeIn 2s ease forwards;
+}
+
+#book h2 {
+    font-size: 3rem;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 30px;
+}
+
+.page {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    border-left: 2px solid #b79bff;
+    border-right: 2px solid #b79bff;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    animation: rise 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes rise {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* SIGNATURE */
+.signature {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    font-family: 'Cinzel', serif;
+}
+
+</style>
+
+<script>
+function openBook() {
+    document.getElementById("book").style.display = "block";
+    window.scrollTo({ top: 700, behavior: 'smooth' });
+}
+</script>
+
+</head>
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<video autoplay muted loop id="bg-video">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Diana</h1>
+    <p>Sub cerul acesta infinit… îți las o parte din mine.</p>
+    <a class="btn" onclick="openBook()">Deschide</a>
+</div>
+
+<!-- BOOK SECTION -->
+<div id="book">
+    <h2>Capitolul I – Când te-am cunoscut</h2>
+
+    <div class="page">
+        <p>
+        N-am știut niciodată că cineva poate să intre în viața ta  
+        atât de încet și totuși să schimbe totul…  
+        ca lumina care apare în mijlocul unei nopți fără stele.
+        </p>
+    </div>
+
+    <h2>Capitolul II – Ce ești pentru mine</h2>
+
+    <div class="page">
+        <p>
+        Tu nu ești doar o persoană.  
+        Tu ești atmosfera în care sufletul meu a învățat să respire altfel.  
+        Ești liniștea după furtună și furtuna care îmi pune sângele în mișcare.
+        </p>
+    </div>
+
+    <h2>Capitolul III – Ce nu ți-am spus niciodată</h2>
+
+    <div class="page">
+        <p>
+        Uneori mă trezesc gândindu-mă cum ar arăta lumea dacă am privi-o împreună.  
+        Și adevărul este că…  
+        mi-ar plăcea să aflu.
+        </p>
+    </div>
+
+    <div class="signature">— Emilian</div>
+</div>
+
+</body>
+</html>
